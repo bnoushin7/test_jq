@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Json with jQuery</title>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script>
+    $.getJSON('article.json', function(data)
+    { console.log('it worked!')
+    });
+</script> -->
+<script>
+    $(document).ready(function() {
+        $.getJSON( "person.json", function( data ) {
+            var employee_data = '';
+
+            console.log(data.attrs['title'])
+            $.each( data, function( key, val ) {
+                employee_data += '<tr>';
+                employee_data += '<td>' + val.coords + '</td>';
+                employee_data += '<td>' + val.data_vars  + '</td>';
+                employee_data += '<td>' + val.attrs['title'] + '</td>';
+                employee_data += '<td>' + val.attrs['Conventions']  + '</td>';
+                employee_data += '<td>' + val.attrs['Source']  + '</td>';
+                employee_data += '<td>' + val.attrs['version']  + '</td>';
+                employee_data += '<td>' + val.attrs['history']  + '</td>';
+                employee_data += '<td>' + val.attrs['dataset_title']  + '</td>';
+                employee_data += '<td>' + val.attrs['References']  + '</td>';
+                employee_data += '</tr>';
+
+
+            });
+        });
+    });
+</script>
+
+salooomon
+
+</body>
+</html>
+
+
+
+
